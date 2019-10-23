@@ -10,9 +10,9 @@ namespace Rock__Paper__Scissors__Lizard__Spock
     {
         static void Main(string[] args)
         {
-            Players playeroptions = new Players();
-            playeroptions.displayOptions();
-            playeroptions.displayResponse();
+            //Players playerOptions = new Players();
+            //playerOptions.displayOptions();
+            //playerOptions.displayResponse();
 
             ComputerPlayer robotDecision = new ComputerPlayer();
             robotDecision.playerChoice();

@@ -9,13 +9,13 @@ namespace Rock__Paper__Scissors__Lizard__Spock
     public class ComputerPlayer : Players
     {
         //member variables (Has A)
-        private Random choice;
+        private Random rand;
         public int playOptionsCount;
 
         // constructor
         public ComputerPlayer()
         {
-            choice = new Random(); //random value
+            rand = new Random(); //random value
             playOptionsCount = playOptions.Count; //length of list items
         }
 
@@ -24,9 +24,8 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         //Over-riding abstract value from Players class
         public override void playerChoice()
         {
-            int aiSelection = choice.Next(playOptionsCount);//tie random choice with length of items  
-            Console.WriteLine(playOptions[aiSelection]);
-            Console.WriteLine(playOptionsCount);
+            int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items  
+            Console.WriteLine(playOptions[aiSelection]);//display list item with random index attached
             Console.ReadLine();
         }
     }
