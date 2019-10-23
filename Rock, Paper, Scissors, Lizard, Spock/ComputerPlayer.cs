@@ -9,22 +9,25 @@ namespace Rock__Paper__Scissors__Lizard__Spock
     public class ComputerPlayer : Players
     {
         //member variables (Has A)
-        //public Random choice;
+        private Random choice;
 
 
         // constructor
 
 
         // member methods (CAN DO)
-        public ComputerPlayer()
-        {
 
-        }
         //Over-riding abstract value from Players class
         public override void roboChoice()
         {
             Console.WriteLine("testing");
-            Console.WriteLine(playOptions);
+            foreach (string options in playOptions)
+            {
+                choice = new Random();
+                //string randomNum = choice.Next(1, options + 1);
+                Console.WriteLine(options);
+            }
+            
             Console.ReadLine();
         }
 
