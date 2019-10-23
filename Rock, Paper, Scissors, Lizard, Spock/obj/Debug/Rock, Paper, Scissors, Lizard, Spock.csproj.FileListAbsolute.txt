@@ -1,0 +1,6 @@
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\obj\Debug\Rock, Paper, Scissors, Lizard, Spock.csprojAssemblyReference.cache
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\bin\Debug\Rock, Paper, Scissors, Lizard, Spock.exe.config
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\bin\Debug\Rock, Paper, Scissors, Lizard, Spock.exe
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\bin\Debug\Rock, Paper, Scissors, Lizard, Spock.pdb
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\obj\Debug\Rock, Paper, Scissors, Lizard, Spock.exe
+C:\Users\Mitchel\Desktop\devCodeCamp\projects\rock-paper-scissors\Rock, Paper, Scissors, Lizard, Spock\obj\Debug\Rock, Paper, Scissors, Lizard, Spock.pdb
