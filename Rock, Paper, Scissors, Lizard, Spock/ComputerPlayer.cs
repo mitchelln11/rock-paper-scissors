@@ -10,26 +10,24 @@ namespace Rock__Paper__Scissors__Lizard__Spock
     {
         //member variables (Has A)
         private Random choice;
-
+        public int playOptionsCount;
 
         // constructor
-
+        public ComputerPlayer()
+        {
+            choice = new Random(); //random value
+            playOptionsCount = playOptions.Count; //length of list items
+        }
 
         // member methods (CAN DO)
 
         //Over-riding abstract value from Players class
-        public override void roboChoice()
+        public override void playerChoice()
         {
-            Console.WriteLine("testing");
-            foreach (string options in playOptions)
-            {
-                choice = new Random();
-                //string randomNum = choice.Next(1, options + 1);
-                Console.WriteLine(options);
-            }
-            
+            int aiSelection = choice.Next(playOptionsCount);//tie random choice with length of items  
+            Console.WriteLine(playOptions[aiSelection]);
+            Console.WriteLine(playOptionsCount);
             Console.ReadLine();
         }
-
     }
 }

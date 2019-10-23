@@ -17,7 +17,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             playOptions = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
         }
 
-        public abstract void roboChoice();
+        public abstract void playerChoice();
 
 
 
