@@ -22,10 +22,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
 
 
         //member methods (Can Do)
-        public void displayOptions()
-        {
-            Console.WriteLine("What would you like to shoot? \n Rock \n Paper \n Scissors \n Lizard \n Spock");
-        }
+
 
         public void displayResponse()
         {
