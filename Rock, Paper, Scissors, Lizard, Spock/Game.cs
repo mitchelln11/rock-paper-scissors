@@ -45,6 +45,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
                 player1 = new Human();
                 player2 = new ComputerPlayer();
                 player1.ChooseName();
+                player2.playerChoice();
             }
             else if (playerNum == "2")
             {
@@ -68,7 +69,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             Console.WriteLine("What would you like to shoot? \n rock \n paper \n scissors \n lizard \n spock \n");
             string option = Console.ReadLine();
             Console.WriteLine("You chose " + option);
-            Console.ReadLine();
+            // Console.ReadLine(); //Uncomment if you want the program to stop with the terminal open
         }
 
         public void CalculateScores(string player1Ans, string player2Ans)

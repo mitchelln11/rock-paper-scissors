@@ -26,16 +26,16 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         public virtual void ChooseName()
         {
             Console.WriteLine("Choose Name");
-            string name1 = Console.ReadLine();
+            Console.ReadLine();
         }
 
         public abstract void playerChoice();
 
 
-        public void displayResponse()
-        {
-            string playerDecision = Console.ReadLine();
-            Console.WriteLine("You chose: " + playerDecision);
-        }
+        //public void displayResponse()
+        //{
+        //    string playerDecision = Console.ReadLine();
+        //    Console.WriteLine("You chose: " + playerDecision);
+        //}
     }
 }
