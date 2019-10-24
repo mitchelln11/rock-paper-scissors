@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rock__Paper__Scissors__Lizard__Spock
 {
-    public class ComputerPlayer : Players
+    public class ComputerPlayer : Player
     {
         //member variables (Has A)
         private Random rand;
@@ -18,6 +18,8 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             rand = new Random(); //random value
             playOptionsCount = playOptions.Count; //length of list items
         }
+
+
 
         // member methods (CAN DO)
 

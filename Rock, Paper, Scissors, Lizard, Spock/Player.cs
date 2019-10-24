@@ -6,22 +6,30 @@ using System.Threading.Tasks;
 
 namespace Rock__Paper__Scissors__Lizard__Spock
 {
-    public abstract class Players
+    public abstract class Player
     {
         //member variables (Has A)
         public List<string> playOptions;
+        public string names;
+        public int score;
 
         //constructor (Spawner)
-        public Players()
+        public Player()
         {
             playOptions = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
+            score = 0;
         }
-
-        public abstract void playerChoice();
-
 
 
         //member methods (Can Do)
+        public virtual void ChooseName()
+        {
+            Console.WriteLine("Choose Name");
+            string name1 = Console.ReadLine();
+            Console.WriteLine(name1);
+        }
+
+        public abstract void playerChoice();
 
 
         public void displayResponse()

@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace Rock__Paper__Scissors__Lizard__Spock
 {
-    public class Human : Players
+    public class Human : Player
     {
-        public Human()
-        {
+        //constructors
 
-        }
+
+        //public Human()
+        //{
+
+        //}
+
+        // member methods (CAN DO)
+        
         public override void playerChoice()
         {
-        //    int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items  
-        //    Console.WriteLine(playOptions[aiSelection]);//display list item with random index attached
-        //    Console.ReadLine();
+            Console.WriteLine("Choose Gesture");
+            string gesture = Console.ReadLine();
+            Console.WriteLine(gesture);
         }
     }
 }
