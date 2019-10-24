@@ -25,7 +25,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items
             Console.WriteLine("Computer chose " + playOptions[aiSelection]);
-            Console.ReadLine();
+            answer = playOptions[aiSelection];
         }
     }
 }

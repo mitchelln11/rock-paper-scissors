@@ -21,8 +21,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         public override void playerChoice()
         {
             Console.WriteLine("Choose Gesture");
-            string gesture = Console.ReadLine();
-            Console.WriteLine(gesture);
+            answer = Console.ReadLine();
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Rock__Paper__Scissors__Lizard__Spock
     {
         //member variables (Has A)
         public List<string> playOptions;
-        public string names;
+        public string name;
+        public string answer;
         public int score;
 
         //constructor (Spawner)
@@ -35,7 +36,6 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             string playerDecision = Console.ReadLine();
             Console.WriteLine("You chose: " + playerDecision);
-            Console.ReadLine();
         }
     }
 }

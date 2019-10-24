@@ -33,45 +33,88 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             "Paper disproves Spock \n" +
             "Spock vaporizes Rock \n");
         }
-        public string ChoosePlayers()
+
+        public void CreatePlayers()
         {
+            //get input for #
             Console.WriteLine("How many players would you like to have?");
             string playerNum = Console.ReadLine();
-            return playerNum;
-        }
-        public void CreatePlayers(string numberOfPlayers)
-        {
-            if (numberOfPlayers == "1")
+
+            if (playerNum == "1")
             {
                 player1 = new Human();
                 player2 = new ComputerPlayer();
+                player1.ChooseName();
             }
-            else if (numberOfPlayers == "2")
+            else if (playerNum == "2")
             {
                 player1 = new Human();
                 player2 = new Human();
+                player1.ChooseName();
+                player2.ChooseName();
             }
             else
             {
                 Console.WriteLine("I'm sorry, this is only a 2 player game. \n" +
                 "Please select either 1 or 2 players. Gestures will be randomly decided \nfor the other player if 1 is typed in.");
+                CreatePlayers();
+            }
+            
+        }
+
+
+        public void DisplayOptions()
+        {
+            Console.WriteLine("What would you like to shoot? \n rock \n paper \n scissors \n lizard \n spock \n");
+            string option = Console.ReadLine();
+            Console.WriteLine("You chose " + option);
+            Console.ReadLine();
+        }
+
+        public void CalculateScores(string player1Ans, string player2Ans)
+        {
+            Console.WriteLine("testing for stop");
+            Console.ReadLine();
+        }
+
+        public void DetermineWinner()
+        {
+            if(player1.score >=2)
+            {
+                Console.WriteLine(player1.name + "Wins");
+            }
+            else if (player2.score >= 2)
+            {
+                Console.WriteLine(player2.name + "Wins");
             }
         }
 
-        
-        public void DisplayOptions()
-        {
-            Console.WriteLine("What would you like to shoot? \n rock \n paper \n pcissors \n lizard \n spock \n");
-            string option = Console.ReadLine();
-            Console.WriteLine("You chose " + option);
-        }
-
+        // Implementing after a game is complete in order to reset
         public void RunGame()
         {
-            string numberOfPlayers = ChoosePlayers();
-            CreatePlayers(numberOfPlayers);
-            player1.playerChoice();
-            player2.playerChoice();
+            //setup
+            DisplayRules();
+            CreatePlayers();
+            DisplayOptions();
+
+            // loop
+            //while (player1.score < 2 && player2.score < 2)
+            //{
+            //    player1.playerChoice();
+            //    player2.playerChoice();
+            //}
+
+            //DetermineRoundWinner(player1, player2)
+            //if (player1.score == 2)
+            //{
+            //    DetermineWinner();
+            //    Console.ReadLine();
+            //}
+            //else if (player2.score == 2)
+            //{
+            //    DetermineWinner();
+            //    Console.ReadLine();
+            //}
         }
     }
 }
