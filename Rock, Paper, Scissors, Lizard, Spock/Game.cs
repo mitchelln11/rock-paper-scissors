@@ -37,7 +37,6 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             Console.WriteLine("How many players would you like to have?");
             string playerNum = Console.ReadLine();
-            Console.WriteLine(playerNum);
             return playerNum;
         }
         public void CreatePlayers(string numberOfPlayers)
@@ -62,8 +61,9 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         
         public void DisplayOptions()
         {
-            Console.WriteLine("What would you like to shoot? \n Rock \n Paper \n Scissors \n Lizard \n Spock");
-            Console.ReadLine();
+            Console.WriteLine("What would you like to shoot? \n rock \n paper \n pcissors \n lizard \n spock \n");
+            string option = Console.ReadLine();
+            Console.WriteLine("You chose " + option);
         }
 
         public void RunGame()

@@ -18,16 +18,13 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             rand = new Random(); //random value
             playOptionsCount = playOptions.Count; //length of list items
         }
-
-
-
         // member methods (CAN DO)
 
         //Over-riding abstract value from Players class
         public override void playerChoice()
         {
-            int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items  
-            Console.WriteLine(playOptions[aiSelection]);//display list item with random index attached
+            int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items
+            Console.WriteLine("Computer chose " + playOptions[aiSelection]);
             Console.ReadLine();
         }
     }

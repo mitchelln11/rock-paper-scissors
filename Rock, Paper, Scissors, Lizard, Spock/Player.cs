@@ -26,7 +26,6 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             Console.WriteLine("Choose Name");
             string name1 = Console.ReadLine();
-            Console.WriteLine(name1);
         }
 
         public abstract void playerChoice();
