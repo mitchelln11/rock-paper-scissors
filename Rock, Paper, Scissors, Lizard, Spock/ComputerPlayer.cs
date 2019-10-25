@@ -28,8 +28,9 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         public override void playerChoice()
         {
             int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items
-            Console.WriteLine(name + " chose " + playOptions[aiSelection]);
+            Console.WriteLine(name + " chose " + playOptions[aiSelection] + " \n");
             answer = playOptions[aiSelection];
+            answer = answer.Trim();
         }
     }
 }

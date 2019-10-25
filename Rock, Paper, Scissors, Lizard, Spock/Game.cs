@@ -11,6 +11,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         //member variables (Has A)
         Player player1;
         Player player2;
+        string rematch;
 
         //constructor (Spawner)
 
@@ -39,6 +40,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             //get input for #
             Console.WriteLine("How many players would you like to have?");
             string playerNum = Console.ReadLine();
+            playerNum = playerNum.Trim();
 
             if (playerNum == "1")
             {
@@ -75,44 +77,70 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             if ((player1.answer == "rock") && ((player2.answer == "scissors") || (player2.answer == "lizard")))
             {
+                Console.WriteLine(player1.name + " wins this round! \n");
                 player1.score++;
             }
             else if ( (player1.answer == "paper") && ((player2.answer == "rock") || (player2.answer == "spock")) )
             {
+                Console.WriteLine(player1.name + " wins this round! \n");
                 player1.score++;
             }
             else if ((player1.answer == "scissors") && ((player2.answer == "paper") || (player2.answer == "lizard")))
             {
+                Console.WriteLine(player1.name + " wins this round! \n");
                 player1.score++;
             }
             else if ((player1.answer == "lizard") && ((player2.answer == "paper") || (player2.answer == "spock")))
             {
+                Console.WriteLine(player1.name + " wins this round! \n");
                 player1.score++;
             }
             else if ((player1.answer == "spock") && ((player2.answer == "scissors") || (player2.answer == "rock")))
             {
+                Console.WriteLine(player1.name + " wins this round! \n");
                 player1.score++;
             }
             else if (player1.answer == player2.answer)
             {
-                Console.WriteLine("This round is a tie!");
+                Console.WriteLine("This round is a tie! \n");
             }
             else
             {
+                Console.WriteLine(player2.name + " wins this round! \n");
                 player2.score++;
             }
-            Console.WriteLine(player1.name + " " + player1.score + " " + player2.name + " " + player2.score); //For testing purposes
+            Console.WriteLine(player1.name + " " + player1.score + " " + player2.name + " " + player2.score);
         }
 
         public void DetermineWinner()
         {
             if(player1.score >=2)
             {
-                Console.WriteLine(player1.name + " Wins");
+                Console.WriteLine(player1.name + " Wins \n");
             }
             else if (player2.score >= 2)
             {
-                Console.WriteLine(player2.name + " Wins");
+                Console.WriteLine(player2.name + " Wins \n");
+            }
+        }
+
+        public void Rematch()
+        {
+            Console.WriteLine("Rematch? Enter Y to play again, enter N to leave.");
+            player1.score = 0;
+            player2.score = 0;
+            rematch = Console.ReadLine();
+            if ( (rematch == "Y") || (rematch == "Yes") )
+            {
+                RunGame();
+            }
+            else if ((rematch == "N") || ( (rematch == "No") || (rematch == "No") ) )
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I'm sorry, I'm not sure what you would like to do. Try Y to replay, or N to quit.");
             }
         }
 
@@ -120,8 +148,6 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         public void RunGame()
         {
             //setup
-            DisplayRules();
-            CreatePlayers();
             Versus();
             DisplayOptions();
 
@@ -134,18 +160,8 @@ namespace Rock__Paper__Scissors__Lizard__Spock
                 DetermineWinner();
             }
 
+            Rematch();
             Console.ReadLine();
-
-            //DetermineRoundWinner(player1, player2)
-            //if (player1.score == 2)
-            //{
-            //    DetermineWinner();
-            //    Console.ReadLine();
-            //}
-            //else if (player2.score == 2)
-            //{
-            //    DetermineWinner();
-            //    Console.ReadLine();
             //}
         }
     }

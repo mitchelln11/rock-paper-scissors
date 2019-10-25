@@ -12,12 +12,6 @@ namespace Rock__Paper__Scissors__Lizard__Spock
 
         //constructors
 
-
-        //public Human()
-        //{
-
-        //}
-
         // member methods (CAN DO)
         public override void ChooseName()
         {
@@ -29,6 +23,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             Console.WriteLine("Choose Gesture");
             answer = Console.ReadLine();
+            answer = answer.Trim();
         }
     }
 }
