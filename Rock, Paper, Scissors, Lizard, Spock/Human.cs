@@ -8,6 +8,8 @@ namespace Rock__Paper__Scissors__Lizard__Spock
 {
     public class Human : Player
     {
+        //member variables (Has A)
+
         //constructors
 
 
@@ -17,7 +19,12 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         //}
 
         // member methods (CAN DO)
-        
+        public override void ChooseName()
+        {
+            Console.WriteLine("Choose Name");
+            name = Console.ReadLine();
+        }
+
         public override void playerChoice()
         {
             Console.WriteLine("Choose Gesture");

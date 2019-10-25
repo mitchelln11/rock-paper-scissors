@@ -19,12 +19,16 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             playOptionsCount = playOptions.Count; //length of list items
         }
         // member methods (CAN DO)
+        public override void ChooseName()
+        {
+            name = "Johnny Five"; // Setting to a string because console logging, then assigning response, assigns the Enter (space) instead of the hardcoded value
+        }
 
         //Over-riding abstract value from Players class
         public override void playerChoice()
         {
             int aiSelection = rand.Next(playOptionsCount);//tie random choice with length of items
-            Console.WriteLine("Computer chose " + playOptions[aiSelection]);
+            Console.WriteLine(name + " chose " + playOptions[aiSelection]);
             answer = playOptions[aiSelection];
         }
     }

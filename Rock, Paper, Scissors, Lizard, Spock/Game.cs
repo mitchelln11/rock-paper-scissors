@@ -44,15 +44,11 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             {
                 player1 = new Human();
                 player2 = new ComputerPlayer();
-                player1.ChooseName();
-                player2.playerChoice();
             }
             else if (playerNum == "2")
             {
                 player1 = new Human();
                 player2 = new Human();
-                player1.ChooseName();
-                player2.ChooseName();
             }
             else
             {
@@ -60,7 +56,9 @@ namespace Rock__Paper__Scissors__Lizard__Spock
                 "Please select either 1 or 2 players. Gestures will be randomly decided \nfor the other player if 1 is typed in.");
                 CreatePlayers();
             }
-            
+            //Putting after if statements because they both run no matter what
+            player1.ChooseName();
+            player2.ChooseName();
         }
 
 
@@ -68,7 +66,11 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             Console.WriteLine("What would you like to shoot? \n rock \n paper \n scissors \n lizard \n spock \n");
             string option = Console.ReadLine();
-            Console.WriteLine("You chose " + option);
+            Console.WriteLine("You chose " + option + "\n");
+
+            //Console.WriteLine(player1.answer);
+            //Console.ReadLine();
+
             // Console.ReadLine(); //Uncomment if you want the program to stop with the terminal open
         }
 
@@ -90,13 +92,25 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             }
         }
 
+        public void Versus()
+        {
+            Console.WriteLine("\n" + player1.name + " vs " + player2.name + "\n");
+        }
+
         // Implementing after a game is complete in order to reset
         public void RunGame()
         {
             //setup
             DisplayRules();
             CreatePlayers();
+            Versus();
             DisplayOptions();
+            
+            Player game = new ComputerPlayer();
+            game.ChooseName();
+            game.playerChoice();
+
+            Console.ReadLine();
 
             // loop
             //while (player1.score < 2 && player2.score < 2)

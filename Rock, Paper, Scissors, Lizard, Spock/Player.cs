@@ -23,11 +23,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
 
 
         //member methods (Can Do)
-        public virtual void ChooseName()
-        {
-            Console.WriteLine("Choose Name");
-            Console.ReadLine();
-        }
+        public abstract void ChooseName();
 
         public abstract void playerChoice();
 
