@@ -61,40 +61,59 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             player2.ChooseName();
         }
 
+        public void Versus()
+        {
+            Console.WriteLine("\n" + player1.name + " vs " + player2.name + "\n");
+        }
 
         public void DisplayOptions()
         {
             Console.WriteLine("What would you like to shoot? \n rock \n paper \n scissors \n lizard \n spock \n");
-            string option = Console.ReadLine();
-            Console.WriteLine("You chose " + option + "\n");
-
-            //Console.WriteLine(player1.answer);
-            //Console.ReadLine();
-
-            // Console.ReadLine(); //Uncomment if you want the program to stop with the terminal open
         }
 
-        public void CalculateScores(string player1Ans, string player2Ans)
+        public void CompareScores()
         {
-            Console.WriteLine("testing for stop");
-            Console.ReadLine();
+            if ((player1.answer == "rock") && ((player2.answer == "scissors") || (player2.answer == "lizard")))
+            {
+                player1.score++;
+            }
+            else if ( (player1.answer == "paper") && ((player2.answer == "rock") || (player2.answer == "spock")) )
+            {
+                player1.score++;
+            }
+            else if ((player1.answer == "scissors") && ((player2.answer == "paper") || (player2.answer == "lizard")))
+            {
+                player1.score++;
+            }
+            else if ((player1.answer == "lizard") && ((player2.answer == "paper") || (player2.answer == "spock")))
+            {
+                player1.score++;
+            }
+            else if ((player1.answer == "spock") && ((player2.answer == "scissors") || (player2.answer == "rock")))
+            {
+                player1.score++;
+            }
+            else if (player1.answer == player2.answer)
+            {
+                Console.WriteLine("This round is a tie!");
+            }
+            else
+            {
+                player2.score++;
+            }
+            Console.WriteLine(player1.name + " " + player1.score + " " + player2.name + " " + player2.score); //For testing purposes
         }
 
         public void DetermineWinner()
         {
             if(player1.score >=2)
             {
-                Console.WriteLine(player1.name + "Wins");
+                Console.WriteLine(player1.name + " Wins");
             }
             else if (player2.score >= 2)
             {
-                Console.WriteLine(player2.name + "Wins");
+                Console.WriteLine(player2.name + " Wins");
             }
-        }
-
-        public void Versus()
-        {
-            Console.WriteLine("\n" + player1.name + " vs " + player2.name + "\n");
         }
 
         // Implementing after a game is complete in order to reset
@@ -105,19 +124,17 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             CreatePlayers();
             Versus();
             DisplayOptions();
-            
-            Player game = new ComputerPlayer();
-            game.ChooseName();
-            game.playerChoice();
-
-            Console.ReadLine();
 
             // loop
-            //while (player1.score < 2 && player2.score < 2)
-            //{
-            //    player1.playerChoice();
-            //    player2.playerChoice();
-            //}
+            while (player1.score < 2 && player2.score < 2)
+            {
+                player1.playerChoice();
+                player2.playerChoice();
+                CompareScores();
+                DetermineWinner();
+            }
+
+            Console.ReadLine();
 
             //DetermineRoundWinner(player1, player2)
             //if (player1.score == 2)
