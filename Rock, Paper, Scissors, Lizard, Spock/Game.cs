@@ -39,8 +39,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             //get input for #
             Console.WriteLine("How many players would you like to have?");
-            string playerNum = Console.ReadLine();
-            playerNum = playerNum.Trim();
+            string playerNum = Console.ReadLine().Replace(" ", "").Trim();
 
             if (playerNum == "1")
             {
@@ -114,11 +113,12 @@ namespace Rock__Paper__Scissors__Lizard__Spock
 
         public void DetermineWinner()
         {
-            if(player1.score >=2)
+            int winnerNumber = 2;
+            if(player1.score >= winnerNumber)
             {
                 Console.WriteLine(player1.name + " Wins \n");
             }
-            else if (player2.score >= 2)
+            else if (player2.score >= winnerNumber)
             {
                 Console.WriteLine(player2.name + " Wins \n");
             }
@@ -129,18 +129,19 @@ namespace Rock__Paper__Scissors__Lizard__Spock
             Console.WriteLine("Rematch? Enter Y to play again, enter N to leave.");
             player1.score = 0;
             player2.score = 0;
-            rematch = Console.ReadLine();
-            if ( (rematch == "Y") || (rematch == "Yes") )
+            rematch = Console.ReadLine().Trim().ToLower();
+            if ( (rematch == "y") || (rematch == "yes") )
             {
                 RunGame();
             }
-            else if ((rematch == "N") || ( (rematch == "No") || (rematch == "No") ) )
+            else if ((rematch == "n") || ( (rematch == "no") ) )
             {
                 Environment.Exit(0);
             }
             else
             {
-                Console.WriteLine("I'm sorry, I'm not sure what you would like to do. Try Y to replay, or N to quit.");
+                Console.WriteLine("Could not recognize \" " + rematch + " \" Try Y to replay, or N to quit.");
+                Rematch();
             }
         }
 
