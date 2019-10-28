@@ -26,12 +26,5 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         public abstract void ChooseName();
 
         public abstract void playerChoice();
-
-
-        //public void displayResponse()
-        //{
-        //    string playerDecision = Console.ReadLine();
-        //    Console.WriteLine("You chose: " + playerDecision);
-        //}
     }
 }

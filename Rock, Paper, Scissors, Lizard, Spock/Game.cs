@@ -20,6 +20,7 @@ namespace Rock__Paper__Scissors__Lizard__Spock
         {
             Console.WriteLine("Rules of the game: \n" +
             "This 2-player game consists of \"Shooting\" gestures. \n" +
+            "The winner is decided in best-of-three rounds \n" +
             "The possible gestures are rock, paper, scissors, lizard, and spock. Certain gestures beat other gestures. Whichever gseture beats the other, wins the round. \n" +
             "The following explains which gestures beat other gestures: \n" +
             "\n" +
